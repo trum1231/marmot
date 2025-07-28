@@ -1,41 +1,57 @@
-# Compiled Lua sources
-luac.out
+setfpscap(3)
+getgenv().gagConfig = {
+    -- Event:
+    CRAFT_EVENT = { "Anti Bee Egg" },
+    BUY_TRAVELING_MERCHANT = { "Bee Egg", "Primal Egg"},
+    BUY_EVENT_SHOP = { "Zen Egg", "Koi"},
+    MAX_EVENT_RESTOCK_SHECKLES = 1000000000,
+    PLACE_ALL_EVENT_STAFF = true,
+    FOCUS_KITSUNE_NPC = true,
+    
+    -- General:
+    AUTO_UPDATE_RESTART = true,
+    REDEEM_CODES = {},
+    EXTRA_PET_SLOTS = 1,
+    EXTRA_EGG_SLOTS = 4,
+    EXTRA_PET_EQUIP_SLOTS = 0,
+    ADD_FRIEND = true,
+    OPEN_ALL_SEED_PACK = true,
+    FAST_LEVEL_PET = true,
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+    MAX_PLANTS = 300,
+    DESTROY_UNTIL_MIN_PLANTS = 280,
+    DELETE_PLANTS_AFTER_MAX = { "Strawberry", "Blueberry", "Corn", "Tomato", "Daffodil", "Apple", "Coconut" },
+    
+    BUY_EGGS = {"Mythical Egg", "Bug Egg", "Bee Egg", "Paradise Egg", "Uncommon Egg", ["Common Summer Egg"] = 20, ["Rare Summer Egg"] = 20},
+    PLANT_EGGS = {"Rare Summer Egg", "Zen Egg", "Anti Bee Egg","Uncommon Egg", "Primal Egg", "Bug Egg", "Dinosaur Egg", "Paradise Egg", "Mythical Egg", "Common Summer Egg", "Oasis Egg", "Night Egg", "Bee Egg"},
+    
+    -- BUY_SEED_SHOP Priority (Left -> Right)
+    BUY_SEED_SHOP = { "Giant Pinecone", "Burning Bud", "Sugar Apple", "Ember Lily", "Beanstalk", "Cacao", "Pepper", "Mushroom", "Grape", "Mango", "Dragon Fruit", "Cactus", "Coconut", "Bamboo", "Apple", "Pumpkin", "Watermelon", ["Daffodil"] = 50, ["Tomato"] = 50, ["Orange Tulip"] = 50, ["Blueberry"] = 50, ["Strawberry"] = 50, ["Carrot"] = 50 },
+    KEEP_SEEDS = {},
+    KEEP_SEEDS_AFTER_MAX_PLANTS = { "Carrot", "Strawberry", "Blueberry", "Orange Tulip", "Tomato", "Daffodil" },
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+    FAVOURITE_FRUIT_MUTATIONS = {},  -- Stop Autosell
+    SKIP_HARVEST_MUTATIONS = {},  -- Stop Harvest
 
-# Precompiled Headers
-*.gch
-*.pch
+    KEEP_PETS = { ["Corrupted Kodama"] = 4, ["Kodama"] = 5, "Corrupted Kitsune", ["Starfish"] = 3, ["Koi"] = 4, "Kitsune", ["Kappa"] = 3, "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Dragonfly", "Butterfly", "Mimic Octopus", "Brontosaurus", "T-Rex", "Spinosaurus", "Ankylosaurus", "Dilophosaurus", ["Capybara"] = 2, [ "Seal"] = 2, "Red Fox", "Tanchozuru", ["Tanuki"] = 3, ["Ostrich"] = 2, ["Raiju"] = 4},
+    KEEP_PETS_WEIGHT = 6,
+    KEEP_PETS_AGE = { ["Starfish"] = 75, ["Capybara"] = 75},
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+    -- EQUIP_PETS Priority (Left -> Right)
+    EQUIP_PETS = { ["Koi"] = 2, "Seal", "Starfish", "Tanchozuru", "Capybara"},
+    USE_PETS_FOR_UPGRADE_SLOT = { "Starfish", "Capybara"},
+    REMOVE_PET_MAX_UPGRADE = { "Capybara", "Starfish" },
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+    BUY_GEAR_SHOP = { "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler", "Basic Sprinkler" },
+    USE_SPRINKLER = { "Basic Sprinkler", "Master Sprinkler", "Godly Sprinkler", "Advanced Sprinkler" },
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+    PET_WEBHOOK_URL = "https://discord.com/api/webhooks/1399288421616189450/DTcp52GhSVzFKCUg-jTn-MxHXPo3NpDkFY2rH0Eb-s9pxIgJS-NqqJvLiVYt1aQqzJ5X",
+    SEED_WEBHOOK_URL = "", 
+    NOTIFY_PETS = { "Corrupted Kitsune", "Kitsune", "Fennec Fox", "Disco Bee", "Raccoon", "Queen Bee", "Dragonfly", "Butterfly", "Mimic Octopus", "T-Rex", "Red Fox", "Spinosaurus"},
+    NOTIFY_PETS_WEIGHT = 10,
+    DISCORD_ID = "",
+    WEBHOOK_NOTE = "marmot",
+    SHOW_WEBHOOK_USERNAME = true,
+}
 
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/344e28f1790f10f37f7873f127376b03.lua"))()
